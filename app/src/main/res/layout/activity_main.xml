@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="customerViewModel"
+            type="com.example.androidroomexample.CustomerViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -15,6 +23,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Name"
+        android:text="@={customerViewModel.inputName}"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +39,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="SurName"
+        android:text="@={customerViewModel.inputSurName}"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +51,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sil"
+        android:text="@={customerViewModel.clearButtonText}"
+        android:onClick="@{()->customerViewModel.clearAllOrDelete()}"
         app:layout_constraintEnd_toEndOf="@+id/btnSave"
         app:layout_constraintStart_toStartOf="@+id/btnSave"
         app:layout_constraintTop_toBottomOf="@+id/btnSave" />
@@ -53,7 +64,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="Yadda saxla"
+        android:text="@={customerViewModel.saveOrUpdateButtonText}"
+        android:onClick="@{()->customerViewModel.saveOrUpdate()}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSurName" />
@@ -70,3 +82,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
