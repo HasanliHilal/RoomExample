@@ -10,7 +10,7 @@ data class Customer(
     @ColumnInfo(name="Id")
     val id:Int,
     @ColumnInfo(name="Name")
-    val name:String,
+    var name:String,
     @ColumnInfo(name="SurName")
-    val surName:String
+    var surName:String
 )

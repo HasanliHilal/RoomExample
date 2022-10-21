@@ -14,13 +14,13 @@ interface CustomerDao {
     suspend fun  insert(customer: Customer):Long
 
     @Update
-    suspend fun  update(customer: Customer)
+    suspend fun  update(customer: Customer) : Int
 
     @Delete
-    suspend fun delete(customer: Customer)
+    suspend fun delete(customer: Customer) : Int
 
     @Query("Delete from Customers")
-    suspend fun deleteAll()
+    suspend fun deleteAll():Int
 
     @Query("select * from Customers")
     fun getAllCustomers():LiveData<List<Customer>>

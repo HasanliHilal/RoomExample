@@ -51,11 +51,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@={customerViewModel.clearButtonText}"
         android:onClick="@{()->customerViewModel.clearAllOrDelete()}"
+        android:text="@={customerViewModel.clearButtonText}"
         app:layout_constraintEnd_toEndOf="@+id/btnSave"
         app:layout_constraintStart_toStartOf="@+id/btnSave"
-        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSave"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnSave"
@@ -64,15 +65,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="@={customerViewModel.saveOrUpdateButtonText}"
         android:onClick="@{()->customerViewModel.saveOrUpdate()}"
+        android:text="@={customerViewModel.saveOrUpdateButtonText}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSurName" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSurName"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="489dp"
+        android:id="@+id/custList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -80,6 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDelete"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
